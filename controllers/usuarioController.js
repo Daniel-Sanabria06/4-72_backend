@@ -139,7 +139,6 @@ export { registrar,
   //  olvidePassword,
     comprobarToken, 
    // nuevoPassword,
-    perfil,
-    registrarCedula
+    perfil
 
 };
