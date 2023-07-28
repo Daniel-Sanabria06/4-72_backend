@@ -13,7 +13,7 @@ dotenv.config()
 contectarDB()
 
 //Configurar Cors 
-const whitelist = ["http://localhost:5173"]
+const whitelist = ["http://localhost:5173","https://four-72backend.onrender.com"]
 
 const corsOptions = {
     origin: function (origin, callback) {
