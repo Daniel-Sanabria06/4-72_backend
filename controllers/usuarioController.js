@@ -1,7 +1,6 @@
 import Usuario from '../models/Usuario.js'
 import generarId from '../helpers/generarId.js';
 import generarJWT from '../helpers/generarJWT.js';
-import Cedula from '../models/cedula.js';
 
 const registrar = async (req, res ) => {
 
@@ -19,21 +18,6 @@ const registrar = async (req, res ) => {
     }
 };
 
-const registrarCedula = async (req, res ) => {
-
-    try {
-       const cedula = new Cedula(req.body);
-       await cedula.save();
-
-       
-       //TODO: poner esto en el mensaje: , Revisa tu Email para Confirmar tu Cuenta
-
-    res.json({ msg: 'Validando...'});
-       
-    } catch (error) {
-        console.log(error);
-    }
-};
 
 const autenticar = async (req, res) => {
     const { email, password } = req.body;
