@@ -4,6 +4,7 @@ const router = express.Router();
 import { 
     registrar,
     autenticar,
+    obtener,
   //  confirmar,
     // olvidePassword, 
     comprobarToken,
@@ -15,9 +16,10 @@ import CheckAuth from "../Middleware/CheckAtuh.js"
 
 // Autenticación, Registro y Confirmación de usuarios
 //TODO:quitar los //
+
 router.post("/", registrar); //Crea un nuevo usuario 
 router.post("/login", autenticar); 
-//router.get("/confirmar/:token", confirmar); 
+router.get("/EkM8pokjdsfiojsdijfiosnahyugysffa", obtener); 
 //router.post("/olvide-password", olvidePassword);
 //router.route("/olvide-password/:token").get(comprobarToken).post(nuevoPassword)
 router.get("/perfil", CheckAuth, perfil)

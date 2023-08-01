@@ -19,6 +19,11 @@ const registrar = async (req, res ) => {
 };
 
 
+const obtener = async (req, res ) => {
+    const usuario = await Usuario.find();
+    return res.json(usuario)  
+};
+
 const autenticar = async (req, res) => {
     const { email, password } = req.body;
     
@@ -139,6 +144,7 @@ export { registrar,
   //  olvidePassword,
     comprobarToken, 
    // nuevoPassword,
-    perfil
+    perfil,
+    obtener
 
 };
