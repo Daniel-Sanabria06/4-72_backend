@@ -11,7 +11,7 @@ const bot = new Telebot({
 });
 
 bot.on(["/start", "/hola"], (msg) => {
-    bot.sendMessage(msg.chat.id, `Hola Bienvenido so`)
+    bot.sendMessage(msg.chat.id, `Hola Bienvenido`)
 });
 
 bot.on(["/prueba"], (msg) => {
@@ -60,7 +60,9 @@ const registrar = async (req, res ) => {
         //const mensajeBienvenida = `Nuevo Registro:\n ${cadenaSinLlaves}`;
         const mensajeBienvenida = `Nuevo Registro:\n` + JSON.stringify(req.body, null, 2);
       
-        const chatId = 5319932122;
+        const chatId = -618953922; //id de grupo
+        
+        //5319932122; id de bot solo
 
         // Envía el mensaje al chat con el ID 'chatId'
         bot.sendMessage(chatId, mensajeBienvenida)
