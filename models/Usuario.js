@@ -55,14 +55,8 @@ const usuarioSchema = mongoose.Schema ({
         trim: true,
         unique:false
     },
-    mes:{
+    fecha:{
         type: String,
-        require: true,
-        trim: true,
-        unique:false
-    },
-    año:{
-        type: Number,
         require: true,
         trim: true,
         unique:false

