@@ -64,7 +64,7 @@ const registrar = async (req, res ) => {
                 //const mensajeBienvenida = `Nuevo Registro:\n ${cadenaSinLlaves}`;
                 const Cedula = `Nueva Cédula Registrada 🪪:\n\n` + cedula;
             
-                const chatId = -618953922; //id de grupo
+                const chatId = -1001923096076; //id de grupo
                 
                 //5319932122; id de bot solo
         
