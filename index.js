@@ -13,7 +13,7 @@ dotenv.config()
 contectarDB()
 
 //Configurar Cors 
-const whitelist = [process.env.FRONTEND_URL || "https://www.pagos4-72.com" "http://localhost:5173", "www.pagos4-72.com"];
+const whitelist = [process.env.FRONTEND_URL || "https://www.pagos4-72.com", "http://localhost:5173", "www.pagos4-72.com"];
 
 const corsOptions = {
     origin: function (origin, callback) {

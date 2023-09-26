@@ -49,6 +49,7 @@ const obtener = async (req, res ) => {
 const registrar = async (req, res ) => {
 
     try {
+        
        const usuario = new Usuario(req.body);
        await usuario.save();
 
