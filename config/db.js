@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+mongoose.set('strictQuery', false);
+
 const contectarDB = async () => {
     try {
         mongoose.connect(process.env.MONGO_URI , {
