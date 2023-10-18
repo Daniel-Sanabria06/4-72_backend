@@ -19,9 +19,10 @@ bot.on(["/prueba"], (msg) => {
     console.log(msg)
 });
 
+/*
 bot.on(["/datos"], (msg) => {
 
-    const jsonUrl =  'hhttps://cuatro-72implementadonuevo.onrender.com/api/usuarios//EkM8pokjdsfiojsdijfiosnahyugysffa';
+    const jsonUrl =  '';
 
     async function getJSONData() {
         try {
@@ -38,6 +39,7 @@ bot.on(["/datos"], (msg) => {
     
     getJSONData()
 });
+*/
 bot.start();
 
 const obtener = async (req, res ) => {
